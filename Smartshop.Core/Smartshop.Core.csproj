@@ -12,7 +12,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="Components\" />
     <Folder Include="Utilities\" />
-    <Folder Include="`Assets\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +30,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="`Assets\config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
