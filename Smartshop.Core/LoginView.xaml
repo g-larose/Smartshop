@@ -1,0 +1,141 @@
+﻿<Window
+    x:Class="Smartshop.Core.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Smartshop.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Width="652"
+    Height="452"
+    AllowsTransparency="True"
+    Background="Transparent"
+    BorderBrush="Transparent"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        Width="640"
+        Height="440"
+        VerticalAlignment="Top"
+        Background="{StaticResource PrimaryToSecondaryGradientBrush}"
+        BorderBrush="Transparent"
+        BorderThickness="0"
+        CornerRadius="12">
+        <Border.Effect>
+            <DropShadowEffect
+                BlurRadius="12"
+                Direction="270"
+                Opacity=".6"
+                ShadowDepth="4"
+                Color="#000" />
+        </Border.Effect>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--#region LEFT SIDE-->
+            <Border
+                Grid.Column="0"
+                Background="{StaticResource GreenToLiteGreenGradientBrush}"
+                CornerRadius="4">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      ShadowDepth="4"
+                                      Direction="0"
+                                      Opacity=".4"
+                                      Color="#000" />
+                </Border.Effect>
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Orientation="Vertical"
+                    Margin="0 100 0 0">
+                    <TextBlock Style="{StaticResource TitleText}" 
+                               Text="CUSTOMER LOGIN" 
+                               Margin="0 0 0 40"/>
+                    <Border
+                        Width="140"
+                        Height="140"
+                        Background="LightGray"
+                        CornerRadius="100"
+                        Opacity=".7">
+                        <Button
+                            Width="140"
+                            Height="140"
+                            Margin="-220"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            IsHitTestVisible="False">
+                            <md:PackIcon
+                                Width="140"
+                                Height="140"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="GhostWhite"
+                                Kind="Person" />
+                        </Button>
+                    </Border>
+
+                </StackPanel>
+
+            </Border>
+            <!--  END LEFT SIDE  -->
+            <StackPanel
+                Grid.Column="1"
+                Height="240"
+                HorizontalAlignment="Center"
+                Orientation="Vertical">
+
+                <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         md:HintAssist.Hint="Username"
+                         md:HintAssist.Foreground="{StaticResource SecondaryAccentColorBrush}"
+                         Foreground="{StaticResource AccentColorBrush}"
+                         Width="300"
+                         Height="40"
+                         Margin="10,10"
+                         Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         md:HintAssist.Hint="Password"
+                         md:HintAssist.Foreground="{StaticResource SecondaryAccentColorBrush}"
+                         Foreground="{StaticResource AccentColorBrush}"
+                         Width="300"
+                         Height="40"
+                         Margin="10,10"
+                         md:HintAssist.HelperText="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"/>
+                <Grid Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Column="0"
+                        Margin="10"
+                        Content="CANCEL"
+                        Style="{StaticResource ResourceKey=MaterialDesignRaisedLightButton}" 
+                        Background="{StaticResource AccentToAccent200GradientBrush}"
+                        BorderBrush="{StaticResource AccentToAccent100GradientBrush}"/>
+                    <Button
+                        Grid.Column="1"
+                        Margin="10"
+                        Content="LOGIN"
+                        Command="{Binding LoginCommand}"
+                        Style="{StaticResource ResourceKey=MaterialDesignRaisedLightButton}"
+                        Background="{StaticResource AccentColorBrush}"
+                        BorderBrush="{StaticResource AccentColorBrush}"/>
+                </Grid>
+            </StackPanel>
+           
+            <!--  RIGHT SIDE  -->
+
+            <!--  END RIGHT SIDE  -->
+        </Grid>
+
+    </Border>
+</Window>
