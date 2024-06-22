@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Smartshop.Core.UserControl
+namespace Smartshop.Core.Components
 {
     /// <summary>
-    /// Interaction logic for AddNewCustomerView.xaml
+    /// Interaction logic for CustomersView.xaml
     /// </summary>
-    public partial class AddNewCustomerView : UserControl
+    public partial class CustomersView : UserControl
     {
-        public AddNewCustomerView()
+        public CustomersView()
         {
             InitializeComponent();
         }

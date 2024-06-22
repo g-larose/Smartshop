@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Components\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
 
@@ -36,12 +35,6 @@
     <None Update="`Assets\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="UserControl\CustomersView.xaml">
-      <Generator></Generator>
-    </Page>
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Smartshop.Core.Views"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:vm="clr-namespace:Smartshop.Core.ViewModels"
-        xmlns:uc="clr-namespace:Smartshop.Core.UserControl"
+        xmlns:components="clr-namespace:Smartshop.Core.Components"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -126,19 +126,45 @@
             <!-- #endregion -->
             
             <!--#region MAIN CONTENT-->
-            <ContentControl Grid.Row="1"
-                            Grid.Column="1"
-                            Content="{Binding Path=SelectedViewModel}"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Margin="6 0">
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <!--#region Searchbar-->
+                <Border Background="{StaticResource PrimaryColorBrush}"
+                        CornerRadius="6"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        BorderBrush="LightGray"
+                        BorderThickness=".5 0 .5 .5">
+                    
+                </Border>
+                <!--#endregion-->
+                
+                <ContentControl Grid.Row="1"
+                                Grid.Column="1"
+                                Content="{Binding Path=SelectedViewModel}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Margin="6 0">
                 <ContentControl.Resources>
-                    <DataTemplate DataType="{x:Type vm:CustomersViewModel}">
-                        <uc:CustomersView />
-                    </DataTemplate>
-                </ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type vm:CustomersViewModel}">
+                            <components:CustomersView />
+                        </DataTemplate>
+                    </ContentControl.Resources>
 
-            </ContentControl>
+                </ContentControl>
+            </Grid>
+            
             <!--#endregion-->
             
             <!--#region FOOTER -->
